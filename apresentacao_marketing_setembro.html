@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação de Marketing - Setembro 2026 | Tecx Consultoria</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f111a;
+            --text-color: #e2e8f0;
+            --accent-primary: #3b82f6;
+            --accent-secondary: #8b5cf6;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 6rem 0;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+
+        .section {
+            margin-bottom: 6rem;
+            animation: fadeIn 1.2s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+        .section:nth-child(5) { animation-delay: 0.8s; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .metric {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 1rem 0;
+        }
+
+        .metric-label {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .badge-meta { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+        .badge-google { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+        
+        .chart-container {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tecx-footer {
+            text-align: center;
+            padding: 4rem 0;
+            border-top: 1px solid var(--card-border);
+            margin-top: 4rem;
+            color: #94a3b8;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Resultados & Estratégia</h1>
+            <p class="subtitle">Análise de Marketing Institucional - JMS | Fechamento Setembro 2026</p>
+        </header>
+
+        <div class="section">
+            <h2>Visão Geral do Mês</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="metric-label">Investimento Total</div>
+                    <div class="metric">R$ 610,60</div>
+                    <p>Google Ads + Meta Ads combinados.</p>
+                </div>
+                <div class="card">
+                    <div class="metric-label">Novas Conversas (Leads)</div>
+                    <div class="metric">52</div>
+                    <p>Custo médio por lead: <strong>R$ 4,78</strong></p>
+                </div>
+                <div class="card">
+                    <div class="metric-label">Tráfego & Descoberta</div>
+                    <div class="metric">485</div>
+                    <p>408 visitas ao perfil (Meta) + 77 cliques (Google)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Análise por Canal</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="badge badge-meta">Meta Ads</span>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Captação e Crescimento</h3>
+                    <ul>
+                        <li><strong>Dark Post 01:</strong> Grande vencedor. Gerou ~30 leads com custo excelente (R$ 4,01 - R$ 4,57).</li>
+                        <li><strong>Reels 02:</strong> Excelente atração de topo de funil. 398 visitas ao perfil a R$ 0,41/visita.</li>
+                        <li><strong>Alerta Operacional:</strong> Evitar campanhas em vídeo para conversão direta (CPL chegou a R$ 14,60) e resolver bloqueios de pagamento na conta.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="badge badge-google">Google Ads</span>
+                    <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Intenção de Busca (Atibaia)</h3>
+                    <ul>
+                        <li><strong>CTR Absurdo:</strong> 12,60% de taxa de clique. O anúncio está extremamente relevante para o público.</li>
+                        <li><strong>CPC Saudável:</strong> R$ 2,50 por clique super qualificado.</li>
+                        <li><strong>Comportamento de Compra:</strong> Pico de cotações concentrado entre quarta e sexta-feira, das 10h às 16h.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="leadsChart" height="100"></canvas>
+            </div>
+
+            <div class="card" style="margin-top: 2rem;">
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem; color: #fff;">Performance de Palavras-Chave (Google Ads)</h3>
+                <p style="margin-bottom: 1.5rem; color: #94a3b8;">Análise dos termos de pesquisa com maior volume de cliques qualificados e retenção na página.</p>
+                
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid var(--card-border);">
+                                <th style="padding: 1rem; color: var(--accent-secondary); font-weight: 600;">Palavra-Chave</th>
+                                <th style="padding: 1rem; color: var(--accent-secondary); font-weight: 600;">Performance / Intenção</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--card-border);">
+                                <td style="padding: 1rem; color: #fff; font-weight: 600;">"muro pré fabricado atibaia"</td>
+                                <td style="padding: 1rem;"><span style="color: var(--success); font-weight: bold;">Alta</span> - Maior volume de cliques locais qualificados.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--card-border);">
+                                <td style="padding: 1rem; color: #fff; font-weight: 600;">"muro pré moldado preço"</td>
+                                <td style="padding: 1rem;"><span style="color: var(--accent-primary); font-weight: bold;">Média-Alta</span> - Excelente intenção para captação de orçamento.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--card-border);">
+                                <td style="padding: 1rem; color: #fff; font-weight: 600;">"fábrica de lajes atibaia"</td>
+                                <td style="padding: 1rem;"><span style="color: var(--success); font-weight: bold;">Alta</span> - Ótimo CTR, atraindo construtores locais.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem; color: #fff; font-weight: 600;">"placas de concreto para muro"</td>
+                                <td style="padding: 1rem;"><span style="color: var(--accent-primary); font-weight: bold;">Média</span> - Tráfego técnico, que o Agente IA consegue triar bem.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Plano de Ação: Outubro 2026</h2>
+            <p class="subtitle" style="margin-bottom: 2rem;">Novo Orçamento Aprovado: R$ 1.050,00</p>
+            <div class="grid">
+                <div class="card" style="border-top: 4px solid var(--accent-primary);">
+                    <h3 style="margin-bottom: 1rem;">Estratégia Meta (R$ 450)</h3>
+                    <ul>
+                        <li>Concentrar 70% da verba em campanhas de Mensagem utilizando o vencedor <strong>Dark Post 01</strong>.</li>
+                        <li>Desenvolver 2 novas variações gráficas mantendo a estética do Dark Post para testes.</li>
+                        <li>Destinar 30% da verba no Reel 02 para manter o fluxo orgânico de visitas (~R$ 5/dia).</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-top: 4px solid var(--success);">
+                    <h3 style="margin-bottom: 1rem;">Estratégia Google (R$ 600)</h3>
+                    <ul>
+                        <li><strong>Otimização de Horário:</strong> Limitar exibição dos anúncios das 07h30 às 17h30 (Seg-Sex).</li>
+                        <li><strong>Novas Extensões:</strong> Implementar Extensões de Imagem e de Chamada direta.</li>
+                        <li><strong>Escala Segura:</strong> Aumentar a verba sem alterar a estrutura de palavras-chave para proteger o CTR de 12%.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Ecossistema & Crescimento Orgânico</h2>
+            <div class="card">
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">Com o suporte da Inteligência Artificial (UAZAPI + N8N), a JMS possui capacidade técnica para escalar o atendimento sem perder qualidade ou gerar gargalos no Whatsapp. O papel do marketing agora é focar em alimentar a IA com contatos qualificados e trabalhar a autoridade da marca.</p>
+                <div class="grid" style="margin-top: 2rem;">
+                    <div>
+                        <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem; font-size: 1.2rem;">Conteúdo Anti-Objeção</h4>
+                        <p style="color: #94a3b8;">Extrair as dúvidas mais frequentes dos logs dos Agentes (Muros/Lajes) e transformá-las em conteúdo educativo (Reels/Carrosséis).</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem; font-size: 1.2rem;">Showroom Digital</h4>
+                        <p style="color: #94a3b8;">Documentar instalações reais. O contraste de "antes e depois" somado à organização do canteiro quebra a objeção de risco do cliente.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem; font-size: 1.2rem;">Automação de Reviews</h4>
+                        <p style="color: #94a3b8;">Via integração N8N + Supabase, disparar pedido de avaliação no Google Meu Negócio ao fechar um ticket, potencializando SEO local.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="tecx-footer">
+            <p><strong>Tecx Consultoria</strong> | Posicionamento Estratégico & Inteligência Artificial</p>
+        </footer>
+    </div>
+
+    <script>
+        // Chart.js Configuration
+        const ctx = document.getElementById('leadsChart').getContext('2d');
+        
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.font.family = 'Outfit';
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Meta Ads (Leads Frios)', 'Google Ads (Cliques de Intenção)', 'Orgânico (Visitas Perfil)'],
+                datasets: [{
+                    label: 'Volume Gerado',
+                    data: [52, 77, 408],
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(16, 185, 129, 0.8)',
+                        'rgba(139, 92, 246, 0.8)'
+                    ],
+                    borderWidth: 0,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Distribuição de Tráfego e Captação - Setembro',
+                        color: '#fff',
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        },
+                        padding: 20
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

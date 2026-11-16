@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apresentação Google Ads - Outubro 2026 | Tecx Consultoria & JMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --tecx-green: #00875A;
+      --tecx-green-dark: #006644;
+      --tecx-mint: #D1F2D9;
+      --tecx-mint-soft: #EBF7EE;
+      --tecx-dark: #13251C;
+      --tecx-slate: #1E293B;
+    }
+
+    body {
+      background-color: #0F172A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1E293B;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .slide-card {
+      width: 1100px;
+      height: 618.75px; /* Proporção exata 16:9 */
+      background: #FFFFFF radial-gradient(circle at 95% 8%, rgba(0, 135, 90, 0.05) 0%, transparent 45%);
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 44px 56px 36px 56px;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+
+    .tecx-marker {
+      display: inline-block;
+      width: 6px;
+      height: 24px;
+      background: #00875A;
+      border-radius: 4px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+
+    .tecx-bottom-line {
+      width: 56px;
+      height: 4px;
+      background: #00875A;
+      border-radius: 2px;
+    }
+
+    .tecx-result-box {
+      border: 1.5px dashed #CBD5E1;
+      border-radius: 10px;
+      padding: 10px 18px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      background: #F8FAFC;
+    }
+
+    .font-display {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Regras de Impressão para PDF Perfeito */
+    @page {
+      size: 16in 9in;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        background-color: #FFFFFF !important;
+        padding: 0 !important;
+        gap: 0 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .slide-card {
+        width: 100vw !important;
+        height: 100vh !important;
+        max-width: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        page-break-after: always !important;
+        page-break-inside: avoid !important;
+        padding: 48px 60px 40px 60px !important;
+      }
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center py-8 gap-8">
+
+  <!-- BARRA DE CONTROLE TOPO (NÃO SAI NO PDF) -->
+  <div class="no-print bg-slate-800 text-white px-6 py-3 rounded-full flex items-center justify-between shadow-xl gap-6 sticky top-4 z-50 border border-slate-700">
+    <div class="flex items-center gap-3">
+      <span class="w-3 h-3 rounded-full bg-[#00875A] animate-pulse"></span>
+      <span class="text-sm font-semibold text-slate-200">Apresentação Executiva Google Ads (Outubro 2026) | JMS & Tecx</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="index.html" class="bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-semibold px-4 py-2 rounded-lg transition-all flex items-center gap-2">
+        <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/></svg>
+        Auditoria Chatbot (Outubro)
+      </a>
+      <button onclick="window.print()" class="bg-[#00875A] hover:bg-[#006644] text-white text-sm font-bold px-5 py-2 rounded-lg transition-all flex items-center gap-2 shadow-lg">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+          <path d="M5 4v3H4a2 2 0 00-2 2v6a2 2 0 002 2h1v2a1 1 0 001 1h8a1 1 0 001-1v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a1 1 0 00-1-1H6a1 1 0 00-1 1zm2 1h6v2H7V5zm8 8H5v-2h10v2zm-2 4H7v-3h6v3z"/>
+        </svg>
+        Gerar / Salvar Apresentação em PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 01: CAPA (COVER) -->
+  <!-- ========================================== -->
+  <div class="slide-card justify-between" id="slide-1">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-slate-400">TECX CONSULTORIA • PERFORMANCE & IA</span>
+      </div>
+      <!-- Logo Oficial Tecx SVG -->
+      <svg class="h-7 w-auto" viewBox="0 0 140 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="3.5" fill="#00875A" />
+        <path d="M12 12V44L36 54H88" stroke="#00875A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="88" cy="54" r="3.5" fill="#00875A" />
+        <text x="32" y="38" font-family="'Outfit', sans-serif" font-weight="800" font-size="28" fill="#111827">TE</text>
+        <text x="70" y="38" font-family="'Outfit', sans-serif" font-weight="800" font-size="28" fill="#00875A">CX</text>
+      </svg>
+    </div>
+
+    <div class="my-auto">
+      <div class="inline-block bg-[#EBF7EE] text-[#00875A] font-bold text-xs uppercase px-3.5 py-1.5 rounded-full mb-4 tracking-wider">
+        Relatório Mensal de Inteligência de Tráfego • Outubro 2026
+      </div>
+      <h1 class="font-display text-5xl font-extrabold text-slate-900 uppercase tracking-tight leading-none mb-3">
+        PERFORMANCE GOOGLE ADS
+      </h1>
+      <div class="w-20 h-1.5 bg-[#00875A] rounded-full mb-5"></div>
+      <p class="text-xl text-slate-600 font-medium max-w-2xl leading-relaxed">
+        Análise detalhada de aquisição, diagnóstico de palavras-chave, comportamento do público e plano tático para a <strong class="text-slate-900">JMS Lajes e Muros Pré-moldados</strong>.
+      </p>
+    </div>
+
+    <div class="flex justify-between items-end border-t border-slate-100 pt-4">
+      <div class="flex items-center gap-6">
+        <div>
+          <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">CLIENTE</p>
+          <p class="text-xs font-extrabold text-slate-800">JMS PRÉ-MOLDADOS</p>
+        </div>
+        <div class="h-6 w-px bg-slate-200"></div>
+        <div>
+          <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">PRAÇA ATUANTE</p>
+          <p class="text-xs font-bold text-slate-700">Atibaia & Região Bragantina</p>
+        </div>
+        <div class="h-6 w-px bg-slate-200"></div>
+        <div>
+          <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">PERÍODO</p>
+          <p class="text-xs font-bold text-slate-700">01/10/2026 a 31/10/2026</p>
+        </div>
+      </div>
+      <span class="text-xs font-semibold text-slate-400">tecxconsultoria.com.br</span>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 02: VISÃO GERAL EXECUTIVA & ESCALA -->
+  <!-- ========================================== -->
+  <div class="slide-card" id="slide-2">
+    <div>
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="font-display text-2xl font-extrabold text-slate-900 flex items-center">
+          <span class="tecx-marker"></span>VISÃO GERAL EXECUTIVA & CRESCIMENTO
+        </h2>
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">SLIDE 02</span>
+      </div>
+      <p class="text-xs text-slate-500 mb-5">Comparativo de performance entre Setembro e Outubro na campanha <strong class="text-slate-800">JMS [SOURCE] [ATIBAIA]</strong>.</p>
+    </div>
+
+    <!-- 4 BIG NUMBERS -->
+    <div class="grid grid-cols-4 gap-4 mb-5">
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:border-[#00875A] transition-all">
+        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Investimento Total</span>
+        <div class="flex items-baseline gap-2">
+          <span class="font-display text-2xl font-extrabold text-slate-900">R$ 420,92</span>
+        </div>
+        <span class="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded mt-1 inline-block">
+          ↑ +193,5% vs Setembro
+        </span>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:border-[#00875A] transition-all">
+        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Cliques Qualificados</span>
+        <div class="flex items-baseline gap-2">
+          <span class="font-display text-2xl font-extrabold text-slate-900">81 cliques</span>
+        </div>
+        <span class="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded mt-1 inline-block">
+          ↑ +44,6% vs Setembro (56)
+        </span>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:border-[#00875A] transition-all">
+        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Taxa de Cliques (CTR)</span>
+        <div class="flex items-baseline gap-2">
+          <span class="font-display text-2xl font-extrabold text-[#00875A]">13,26%</span>
+        </div>
+        <span class="text-[11px] font-semibold text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded mt-1 inline-block">
+          Benchmark Setor: 4% a 6%
+        </span>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:border-[#00875A] transition-all">
+        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Conversões no Google</span>
+        <div class="flex items-baseline gap-2">
+          <span class="font-display text-2xl font-extrabold text-slate-900">7,00</span>
+        </div>
+        <span class="text-[11px] font-semibold text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded mt-1 inline-block">
+          CPA Médio: R$ 60,13
+        </span>
+      </div>
+    </div>
+
+    <!-- COMPARATIVO TABELA -->
+    <div class="grid grid-cols-2 gap-5 mb-4">
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h3 class="text-xs font-bold uppercase text-slate-700 tracking-wider mb-2.5 flex items-center justify-between">
+          <span>Comparativo Mensal Consolidado</span>
+          <span class="text-[10px] text-slate-400 font-normal">Base Google Ads</span>
+        </h3>
+        <table class="w-full text-xs text-left">
+          <thead>
+            <tr class="text-slate-400 border-b border-slate-200">
+              <th class="pb-1 font-semibold">Métrica</th>
+              <th class="pb-1 font-semibold text-right">Setembro/26</th>
+              <th class="pb-1 font-semibold text-right text-slate-900">Outubro/26</th>
+              <th class="pb-1 font-semibold text-right text-[#00875A]">Variação</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr>
+              <td class="py-1.5 text-slate-600 font-medium">Investimento</td>
+              <td class="py-1.5 text-right text-slate-500">R$ 143,40</td>
+              <td class="py-1.5 text-right font-bold text-slate-900">R$ 420,92</td>
+              <td class="py-1.5 text-right text-emerald-600 font-bold">+193,5%</td>
+            </tr>
+            <tr>
+              <td class="py-1.5 text-slate-600 font-medium">Cliques</td>
+              <td class="py-1.5 text-right text-slate-500">56</td>
+              <td class="py-1.5 text-right font-bold text-slate-900">81</td>
+              <td class="py-1.5 text-right text-emerald-600 font-bold">+44,6%</td>
+            </tr>
+            <tr>
+              <td class="py-1.5 text-slate-600 font-medium">CPC Médio</td>
+              <td class="py-1.5 text-right text-slate-500">R$ 2,56</td>
+              <td class="py-1.5 text-right font-bold text-slate-900">R$ 5,20</td>
+              <td class="py-1.5 text-right text-amber-600 font-bold">+103,1%</td>
+            </tr>
+            <tr>
+              <td class="py-1.5 text-slate-600 font-medium">CTR (Atratividade)</td>
+              <td class="py-1.5 text-right text-slate-500">~12,0%</td>
+              <td class="py-1.5 text-right font-bold text-[#00875A]">13,26%</td>
+              <td class="py-1.5 text-right text-emerald-600 font-bold">+1,26 p.p.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-[#EBF7EE] border border-emerald-200 rounded-xl p-4 flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#00875A] block mb-1">SCORE DE SAÚDE DA CONTA</span>
+          <div class="flex items-baseline gap-2 mb-2">
+            <span class="font-display text-3xl font-black text-slate-900">78,7%</span>
+            <span class="text-xs font-semibold text-[#00875A]">Pontuação de Otimização</span>
+          </div>
+          <p class="text-xs text-slate-700 leading-relaxed">
+            A conta possui excelente relevância de cópia e anúncios altamente atrativos, mantendo o CTR em patamar de excelência (13,26%). O desafio de Outubro foi a subida do CPC médio decorrente de concorrência por leilão amplo.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 text-[11px] font-bold text-[#00875A] mt-2">
+          <span>✓ Anúncios validados e responsivos</span>
+          <span>•</span>
+          <span>✓ Conexão direta ao WhatsApp</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTADO BOX -->
+    <div class="tecx-result-box text-slate-700 flex items-center justify-between">
+      <span><strong>RESULTADO:</strong> Aumento expressivo de tração (+44,6% em cliques) e interesse qualificado, validando a alta conversão criativa dos anúncios em Atibaia.</span>
+      <div class="tecx-bottom-line"></div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 03: DIAGNÓSTICO CRÍTICO & DRENAGEM -->
+  <!-- ========================================== -->
+  <div class="slide-card" id="slide-3">
+    <div>
+      <div class="flex justify-between items-center mb-3">
+        <h2 class="font-display text-2xl font-extrabold text-slate-900 flex items-center">
+          <span class="tecx-marker"></span>DIAGNÓSTICO CRÍTICO: CANIBALIZAÇÃO & DRENAGEM
+        </h2>
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">SLIDE 03</span>
+      </div>
+      <p class="text-xs text-slate-500 mb-4">Mapeamento forense dos termos de pesquisa reais digitados pelos usuários no Google durante Outubro.</p>
+    </div>
+
+    <!-- CARDS DE IMPACTO -->
+    <div class="grid grid-cols-3 gap-4 mb-4">
+      <div class="bg-rose-50 border border-rose-200 rounded-xl p-4">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-rose-700 block mb-1">Drenagem por Concorrentes</span>
+        <span class="font-display text-2xl font-extrabold text-rose-900">73,1% da Verba</span>
+        <p class="text-[11px] text-rose-800 mt-1 leading-snug">
+          <strong>R$ 159,08 e 22 cliques</strong> foram consumidos por buscas de outras empresas (ex: Lajes Belo, Grauti, Santa Rita, Fortin).
+        </p>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700 block mb-1">Cliques Fora da Praça</span>
+        <span class="font-display text-2xl font-extrabold text-amber-900">14,0% da Verba</span>
+        <p class="text-[11px] text-amber-800 mt-1 leading-snug">
+          <strong>R$ 30,54 gastos</strong> em cidades fora do raio de atuação prioritário (Guarulhos, Campo Limpo Paulista).
+        </p>
+      </div>
+
+      <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 block mb-1">Buscas Diretas & Qualificadas</span>
+        <span class="font-display text-2xl font-extrabold text-[#00875A]">12,9% da Verba</span>
+        <p class="text-[11px] text-emerald-800 mt-1 leading-snug">
+          Apenas <strong>R$ 28,09 (15 cliques)</strong> focaram em termos diretos como "lajes atibaia" e "muro de placa".
+        </p>
+      </div>
+    </div>
+
+    <!-- TABELA DOS PRINCIPAIS DRENADORES IDENTIFICADOS -->
+    <div class="bg-white border border-slate-200 rounded-xl p-3.5 mb-3">
+      <h3 class="text-xs font-bold uppercase text-slate-800 tracking-wider mb-2 flex items-center justify-between">
+        <span>Principais Termos Drenadores de Orçamento (Candidatos Imediatos a Negativação)</span>
+        <span class="text-[10px] text-rose-600 font-bold bg-rose-50 px-2 py-0.5 rounded">Ação Tática Imediata</span>
+      </h3>
+      <div class="grid grid-cols-2 gap-x-6 text-xs">
+        <ul class="space-y-1.5">
+          <li class="flex justify-between items-center py-1 border-b border-slate-100">
+            <span class="text-slate-700">🔍 <strong>lajes belo atibaia</strong> (Concorrente)</span>
+            <span class="font-bold text-rose-600">R$ 29,41 <span class="text-slate-400 font-normal">(7 cliques)</span></span>
+          </li>
+          <li class="flex justify-between items-center py-1 border-b border-slate-100">
+            <span class="text-slate-700">🔍 <strong>grauti atibaia</strong> (Concorrente / Depósito)</span>
+            <span class="font-bold text-rose-600">R$ 21,86 <span class="text-slate-400 font-normal">(1 clique)</span></span>
+          </li>
+          <li class="flex justify-between items-center py-1 border-b border-slate-100">
+            <span class="text-slate-700">🔍 <strong>lajes paulista guarulhos</strong> (Fora de praça)</span>
+            <span class="font-bold text-amber-600">R$ 20,66 <span class="text-slate-400 font-normal">(1 clique)</span></span>
+          </li>
+          <li class="flex justify-between items-center py-1 border-b border-slate-100">
+            <span class="text-slate-700">🔍 <strong>deposito do desvio atibaia</strong> (Depósito)</span>
+            <span class="font-bold text-rose-600">R$ 16,77 <span class="text-slate-400 font-normal">(1 clique)</span></span>
+          </li>
+        </ul>
+
+        <ul class="space-y-1.5">
+          <li class="flex justify-between items-center py-1 border-b border-slate-100">
+            <span class="text-slate-700">🔍 <strong>lajes santa rita braganca</strong> (Concorrente)</span>
+            <span class="font-bold text-rose-600">R$ 16,05 <span class="text-slate-400 font-normal">(2 cliques)</span></span>
+          </li>
+          <li class="flex justify-between items-center py-1 border-b border-slate-100">
+            <span class="text-slate-700">🔍 <strong>fercimcal atibaia</strong> (Depósito / Ferragem)</span>
+            <span class="font-bold text-rose-600">R$ 14,81 <span class="text-slate-400 font-normal">(1 clique)</span></span>
+          </li>
+          <li class="flex justify-between items-center py-1 border-b border-slate-100">
+            <span class="text-slate-700">🔍 <strong>fortin lajes / produtos fortin</strong> (Concorrente)</span>
+            <span class="font-bold text-rose-600">R$ 25,26 <span class="text-slate-400 font-normal">(3 cliques)</span></span>
+          </li>
+          <li class="flex justify-between items-center py-1 border-b border-slate-100">
+            <span class="text-slate-700">🔍 <strong>concremix atibaia</strong> (Concorrente Concreto)</span>
+            <span class="font-bold text-rose-600">R$ 13,26 <span class="text-slate-400 font-normal">(1 clique)</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RESULTADO BOX -->
+    <div class="tecx-result-box text-slate-700 flex items-center justify-between">
+      <span><strong>RESULTADO:</strong> Ao negativar essa lista de concorrentes, recuperamos de imediato ~R$ 190,00 de economia pura no mês para direcionar exclusivamente a orçamentos da JMS.</span>
+      <div class="tecx-bottom-line"></div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 04: PALAVRAS-CHAVE CONFIGURADAS -->
+  <!-- ========================================== -->
+  <div class="slide-card" id="slide-4">
+    <div>
+      <div class="flex justify-between items-center mb-3">
+        <h2 class="font-display text-2xl font-extrabold text-slate-900 flex items-center">
+          <span class="tecx-marker"></span>PALAVRAS-CHAVE: O QUE RODOU vs OPORTUNIDADES OCULTAS
+        </h2>
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">SLIDE 04</span>
+      </div>
+      <p class="text-xs text-slate-500 mb-4">A causa raiz da canibalização: uma única palavra em correspondência ampla consumiu o orçamento.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-5 mb-4">
+      <!-- PALAVRAS QUE GASTARAM -->
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+        <div class="flex justify-between items-center mb-3">
+          <h3 class="text-xs font-extrabold uppercase text-slate-800 tracking-wider">Palavras Ativas que Consumiram a Verba</h3>
+          <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">Consumo Concentrado</span>
+        </div>
+        <div class="space-y-3">
+          <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100">
+            <div class="flex justify-between items-baseline mb-1">
+              <span class="text-xs font-bold text-slate-900">fábrica de lajes (Ampla)</span>
+              <span class="text-xs font-extrabold text-slate-900">R$ 328,02</span>
+            </div>
+            <div class="flex justify-between text-[11px] text-slate-500">
+              <span>CTR: 13,68% • 5 Conversões</span>
+              <span class="text-rose-600 font-semibold">77,9% do orçamento total</span>
+            </div>
+            <p class="text-[10px] text-slate-500 mt-1">Como estava em correspondência ampla, o Google disparou para concorrentes.</p>
+          </div>
+
+          <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100">
+            <div class="flex justify-between items-baseline mb-1">
+              <span class="text-xs font-bold text-slate-900">artefatos de cimento (Frase - Pausada)</span>
+              <span class="text-xs font-extrabold text-slate-900">R$ 47,09</span>
+            </div>
+            <div class="flex justify-between text-[11px] text-slate-500">
+              <span>CTR: 13,10% • 1 Conversão</span>
+              <span class="text-slate-600 font-semibold">11,2% do orçamento</span>
+            </div>
+          </div>
+
+          <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-100">
+            <div class="flex justify-between items-baseline mb-1">
+              <span class="text-xs font-bold text-slate-900">lajes em atibaia (Frase - Ativada)</span>
+              <span class="text-xs font-extrabold text-emerald-700">R$ 31,97</span>
+            </div>
+            <div class="flex justify-between text-[11px] text-slate-500">
+              <span>CTR: 14,04% • 1 Conversão</span>
+              <span class="text-emerald-700 font-semibold">Altamente Qualificada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PALAVRAS ESTRATÉGICAS ZERADAS -->
+      <div class="bg-[#EBF7EE] border border-emerald-200 rounded-xl p-4 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <h3 class="text-xs font-extrabold uppercase text-[#00875A] tracking-wider">Oportunidades com R$ 0,00 de Gasto</h3>
+            <span class="text-[10px] font-bold text-emerald-800 bg-white px-2 py-0.5 rounded border border-emerald-300">Alta Intenção</span>
+          </div>
+          <p class="text-xs text-slate-700 mb-3">
+            Termos vitais de <strong>fundo de funil</strong> que não tiveram espaço para rodar devido ao teto diário ser absorvido pela palavra ampla:
+          </p>
+          <ul class="space-y-2 text-xs">
+            <li class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-emerald-200 text-slate-800 font-medium">
+              <span class="text-[#00875A] font-bold">✓</span> [orçamento de laje personalizado] • 0 cliques
+            </li>
+            <li class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-emerald-200 text-slate-800 font-medium">
+              <span class="text-[#00875A] font-bold">✓</span> [preço de laje atibaia] • 0 cliques
+            </li>
+            <li class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-emerald-200 text-slate-800 font-medium">
+              <span class="text-[#00875A] font-bold">✓</span> [onde comprar laje em atibaia] • 0 cliques
+            </li>
+            <li class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-emerald-200 text-slate-800 font-medium">
+              <span class="text-[#00875A] font-bold">✓</span> [muro pré-moldado atibaia] • R$ 0,96 (Pausado)
+            </li>
+          </ul>
+        </div>
+        <p class="text-[11px] text-emerald-900 font-semibold mt-2">
+          👉 <strong>Ação:</strong> Mudar "fábrica de lajes" para correspondência de frase e injetar verba nesses termos transacionais.
+        </p>
+      </div>
+    </div>
+
+    <!-- RESULTADO BOX -->
+    <div class="tecx-result-box text-slate-700 flex items-center justify-between">
+      <span><strong>RESULTADO:</strong> O tráfego de alta intenção já está estruturado na conta; basta rebalancear a entrega para acionar as palavras de compra direta.</span>
+      <div class="tecx-bottom-line"></div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 05: COMPORTAMENTO TEMPORAL & DIAS -->
+  <!-- ========================================== -->
+  <div class="slide-card" id="slide-5">
+    <div>
+      <div class="flex justify-between items-center mb-3">
+        <h2 class="font-display text-2xl font-extrabold text-slate-900 flex items-center">
+          <span class="tecx-marker"></span>COMPORTAMENTO TEMPORAL: DIAS, HORÁRIOS & O "APAGÃO"
+        </h2>
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">SLIDE 05</span>
+      </div>
+      <p class="text-xs text-slate-500 mb-4">Análise da distribuição de tráfego por dia da semana e horas do dia.</p>
+    </div>
+
+    <div class="grid grid-cols-12 gap-5 mb-4 items-center">
+      <!-- GRÁFICO DIAS DA SEMANA -->
+      <div class="col-span-7 bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+        <h3 class="text-xs font-bold uppercase text-slate-800 tracking-wider mb-2 flex justify-between">
+          <span>Volume de Impressões por Dia da Semana</span>
+          <span class="text-[10px] text-slate-400">Total: 611 impressões</span>
+        </h3>
+        <div style="height: 180px;">
+          <canvas id="chartDias"></canvas>
+        </div>
+      </div>
+
+      <!-- INSIGHTS HORÁRIOS & APAGÃO -->
+      <div class="col-span-5 flex flex-col gap-3">
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-[#00875A] block mb-1">Horário de Ouro Comercial</span>
+          <h4 class="font-display text-lg font-extrabold text-slate-900">08:00 às 13:00</h4>
+          <p class="text-[11px] text-slate-600 mt-1 leading-relaxed">
+            Concentra <strong>62% de toda a procura do mês</strong> (Picos às 09h com 87 e às 10h com 94 impressões). Pessoas pesquisam durante o expediente de obras.
+          </p>
+        </div>
+
+        <div class="bg-rose-50 border border-rose-200 rounded-xl p-3.5">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-rose-700 block mb-1">Alerta: O Apagão de 10 Dias</span>
+          <h4 class="font-display text-lg font-extrabold text-rose-900">09/10 a 18/10 Zerados</h4>
+          <p class="text-[11px] text-rose-800 mt-1 leading-relaxed">
+            A campanha ficou totalmente pausada/sem saldo por 10 dias seguidos. Manter a continuidade diária é essencial para não perder clientes no aquecimento.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTADO BOX -->
+    <div class="tecx-result-box text-slate-700 flex items-center justify-between">
+      <span><strong>RESULTADO:</strong> Programação otimizada para Segunda a Sexta das 07h às 18h, blindando o orçamento contra madrugadas e domingos de baixo retorno.</span>
+      <div class="tecx-bottom-line"></div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 06: DEMOGRAFIA & DISPOSITIVOS -->
+  <!-- ========================================== -->
+  <div class="slide-card" id="slide-6">
+    <div>
+      <div class="flex justify-between items-center mb-3">
+        <h2 class="font-display text-2xl font-extrabold text-slate-900 flex items-center">
+          <span class="tecx-marker"></span>PERFIL DO COMPRADOR & DISPOSITIVOS
+        </h2>
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">SLIDE 06</span>
+      </div>
+      <p class="text-xs text-slate-500 mb-4">Quem são os tomadores de decisão que procuram pelos produtos da JMS na região.</p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-5 mb-4">
+      <!-- DISPOSITIVOS -->
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Dispositivo Dominante</span>
+          <h3 class="font-display text-2xl font-black text-slate-900 mb-2">97,6% Mobile</h3>
+          <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+            Dos R$ 420,92 investidos, <strong>R$ 411,05 e 75 cliques</strong> vieram exclusivamente de Smartphones.
+          </p>
+        </div>
+        <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100 text-[11px]">
+          <div class="flex justify-between text-slate-700 font-medium mb-1">
+            <span>Smartphones</span>
+            <span class="font-bold text-slate-900">75 cliques (92,6%)</span>
+          </div>
+          <div class="flex justify-between text-slate-400">
+            <span>Computadores</span>
+            <span>6 cliques (7,4%)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GÊNERO -->
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Divisão por Sexo</span>
+          <h3 class="font-display text-2xl font-black text-slate-900 mb-2">62,9% Masculino</h3>
+          <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+            Forte presença de mestres de obras, pedreiros, engenheiros e proprietários do sexo masculino, com 38,1% de público feminino (reformas residenciais).
+          </p>
+        </div>
+        <div class="bg-[#EBF7EE] p-2.5 rounded-lg border border-emerald-200 text-[11px]">
+          <div class="flex justify-between text-emerald-900 font-bold mb-1">
+            <span>Homens</span>
+            <span>304 impressões</span>
+          </div>
+          <div class="flex justify-between text-emerald-700">
+            <span>Mulheres</span>
+            <span>184 impressões</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAIXA ETÁRIA -->
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Faixa Etária Decisora</span>
+          <h3 class="font-display text-2xl font-black text-slate-900 mb-2">35 a 54 anos</h3>
+          <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+            <strong>48,9% do público</strong> está na faixa madura de decisão financeira e construção ativa de patrimônio.
+          </p>
+        </div>
+        <div class="space-y-1 text-[11px]">
+          <div class="flex justify-between text-slate-700">
+            <span>35 a 44 anos:</span>
+            <span class="font-bold">29,0% (140 impr)</span>
+          </div>
+          <div class="flex justify-between text-slate-700">
+            <span>45 a 54 anos:</span>
+            <span class="font-bold">19,9% (96 impr)</span>
+          </div>
+          <div class="flex justify-between text-slate-500">
+            <span>25 a 34 anos:</span>
+            <span>18,0% (87 impr)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTADO BOX -->
+    <div class="tecx-result-box text-slate-700 flex items-center justify-between">
+      <span><strong>RESULTADO:</strong> Jornada 100% perfeita para mobile: o anúncio no celular abre imediatamente o WhatsApp oficial da JMS, onde a IA assume a qualificação.</span>
+      <div class="tecx-bottom-line"></div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 07: SINERGIA COM ATENDIMENTO IA -->
+  <!-- ========================================== -->
+  <div class="slide-card" id="slide-7">
+    <div>
+      <div class="flex justify-between items-center mb-3">
+        <h2 class="font-display text-2xl font-extrabold text-slate-900 flex items-center">
+          <span class="tecx-marker"></span>SINERGIA: GOOGLE ADS + AGENTES DE IA (N8N)
+        </h2>
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">SLIDE 07</span>
+      </div>
+      <p class="text-xs text-slate-500 mb-4">Como a automação inteligente da JMS potencializa cada centavo investido no Google.</p>
+    </div>
+
+    <div class="grid grid-cols-4 gap-4 mb-5">
+      <!-- PASSO 1 -->
+      <div class="bg-white border-b-4 border-[#00875A] border-t border-x border-slate-200 rounded-xl p-4 shadow-sm">
+        <span class="w-6 h-6 rounded-full bg-[#EBF7EE] text-[#00875A] font-bold text-xs flex items-center justify-center mb-2">1</span>
+        <h4 class="font-display text-sm font-bold text-slate-900 mb-1">Clique Qualificado</h4>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Cliente busca "lajes em Atibaia" ou "muro pré-moldado" no celular e clica no anúncio do Google.
+        </p>
+      </div>
+
+      <!-- PASSO 2 -->
+      <div class="bg-white border-b-4 border-[#00875A] border-t border-x border-slate-200 rounded-xl p-4 shadow-sm">
+        <span class="w-6 h-6 rounded-full bg-[#EBF7EE] text-[#00875A] font-bold text-xs flex items-center justify-center mb-2">2</span>
+        <h4 class="font-display text-sm font-bold text-slate-900 mb-1">WhatsApp Instantâneo</h4>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Uazapi + N8N recebem a mensagem sem filas, tratando identificação limpa (PN/LID) em frações de segundo.
+        </p>
+      </div>
+
+      <!-- PASSO 3 -->
+      <div class="bg-white border-b-4 border-[#00875A] border-t border-x border-slate-200 rounded-xl p-4 shadow-sm">
+        <span class="w-6 h-6 rounded-full bg-[#EBF7EE] text-[#00875A] font-bold text-xs flex items-center justify-center mb-2">3</span>
+        <h4 class="font-display text-sm font-bold text-slate-900 mb-1">IA Triagem & Cálculo</h4>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          O agente IA (Muros V3 / Lajes) coleta modelo, metragem, consulta o Supabase e calcula o orçamento exato.
+        </p>
+      </div>
+
+      <!-- PASSO 4 -->
+      <div class="bg-white border-b-4 border-[#00875A] border-t border-x border-slate-200 rounded-xl p-4 shadow-sm">
+        <span class="w-6 h-6 rounded-full bg-[#EBF7EE] text-[#00875A] font-bold text-xs flex items-center justify-center mb-2">4</span>
+        <h4 class="font-display text-sm font-bold text-slate-900 mb-1">Fechamento Humano</h4>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          O time comercial da JMS recebe o lead 100% qualificado, pronto para agendamento de visita ou envio de contrato.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-[#EBF7EE] border border-emerald-200 rounded-xl p-4 flex items-center justify-between">
+      <div>
+        <h4 class="text-xs font-extrabold uppercase text-[#00875A] tracking-wider mb-1">Capacidade de Escala Infinita</h4>
+        <p class="text-xs text-slate-700">
+          Com a infraestrutura de IA validada em produção, a JMS pode dobrar ou triplicar a verba do Google Ads sem risco de gargalo operacional no WhatsApp.
+        </p>
+      </div>
+      <div class="text-right">
+        <span class="text-xs font-bold text-[#00875A] bg-white px-3 py-1.5 rounded-lg border border-emerald-300">Tempo Médio de Resposta: &lt; 5s</span>
+      </div>
+    </div>
+
+    <!-- RESULTADO BOX -->
+    <div class="tecx-result-box text-slate-700 flex items-center justify-between mt-3">
+      <span><strong>RESULTADO:</strong> Máxima eficiência do capital investido: nenhum clique de tráfego é desperdiçado por demora no retorno.</span>
+      <div class="tecx-bottom-line"></div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 08: PLANO DE AÇÃO PARA NOVEMBRO -->
+  <!-- ========================================== -->
+  <div class="slide-card" id="slide-8">
+    <div>
+      <div class="flex justify-between items-center mb-3">
+        <h2 class="font-display text-2xl font-extrabold text-slate-900 flex items-center">
+          <span class="tecx-marker"></span>PLANO TÁTICO DE OTIMIZAÇÃO (NOVEMBRO)
+        </h2>
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">SLIDE 08</span>
+      </div>
+      <p class="text-xs text-slate-500 mb-4">4 ações determinísticas para reduzir o CPC, eliminar o desperdício e maximizar orçamentos.</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-6 h-6 rounded-full bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center">1</span>
+          <h4 class="font-display text-sm font-bold text-slate-900">Negativação Imediata de Termos</h4>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed mb-2">
+          Subir lista com todos os nomes de concorrentes mapeados (Belo, Grauti, Santa Rita, Fortin, Fercimcal, Sardinha, etc.) e cidades fora da praça (Guarulhos).
+        </p>
+        <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Economia imediata de ~R$ 190/mês</span>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center">2</span>
+          <h4 class="font-display text-sm font-bold text-slate-900">Ajuste de Correspondência</h4>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed mb-2">
+          Alterar a palavra principal <code>fábrica de lajes</code> de correspondência ampla para <strong>correspondência de frase ("...")</strong>, impedindo desvios do algoritmo.
+        </p>
+        <span class="text-[11px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">Redução substancial do CPC Médio</span>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-6 h-6 rounded-full bg-emerald-100 text-[#00875A] font-bold text-xs flex items-center justify-center">3</span>
+          <h4 class="font-display text-sm font-bold text-slate-900">Reativação dos Muros Pré-moldados</h4>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed mb-2">
+          Destinar cota fixa do orçamento para a campanha de muros (palavras: [muro pré moldado atibaia], [muro de placa atibaia]). Ticket médio muito mais alto.
+        </p>
+        <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Aumento no Ticket Médio de Venda</span>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 font-bold text-xs flex items-center justify-center">4</span>
+          <h4 class="font-display text-sm font-bold text-slate-900">Programação & Continuidade de Saldo</h4>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed mb-2">
+          Limitar exibições de Segunda a Sexta das 07h às 18h e estabelecer rotina de abastecimento de saldo para eliminar qualquer risco de novo "apagão".
+        </p>
+        <span class="text-[11px] font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded">Tráfego contínuo e sem interrupções</span>
+      </div>
+    </div>
+
+    <!-- RESULTADO BOX -->
+    <div class="tecx-result-box text-slate-700 flex items-center justify-between">
+      <span><strong>RESULTADO:</strong> Metas para Novembro: CPC abaixo de R$ 3,50, taxa de conversão acima de 15% e mais de 25 orçamentos qualificados gerados no WhatsApp.</span>
+      <div class="tecx-bottom-line"></div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 09: FECHAMENTO / VAMOS COMEÇAR? -->
+  <!-- ========================================== -->
+  <div class="slide-card justify-between" id="slide-9" style="background: #D1F2D9 radial-gradient(circle at 90% 10%, rgba(0, 135, 90, 0.15) 0%, transparent 60%);">
+    <div class="flex justify-between items-center">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#006644]">TECX CONSULTORIA • POSICIONAMENTO E IA</span>
+      <svg class="h-7 w-auto" viewBox="0 0 140 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="3.5" fill="#00875A" />
+        <path d="M12 12V44L36 54H88" stroke="#00875A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="88" cy="54" r="3.5" fill="#00875A" />
+        <text x="32" y="38" font-family="'Outfit', sans-serif" font-weight="800" font-size="28" fill="#111827">TE</text>
+        <text x="70" y="38" font-family="'Outfit', sans-serif" font-weight="800" font-size="28" fill="#00875A">CX</text>
+      </svg>
+    </div>
+
+    <div class="my-auto text-center">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#006644] bg-white/70 px-4 py-1 rounded-full inline-block mb-3">
+        Próximo Passo Estratégico
+      </span>
+      <h2 class="font-display text-5xl font-black text-[#00875A] uppercase tracking-tight mb-4">
+        VAMOS ACELERAR EM NOVEMBRO?
+      </h2>
+      <p class="text-base text-slate-800 max-w-xl mx-auto font-medium mb-6">
+        As otimizações identificadas estão prontas para implantação imediata, blindando a conta e preparando a JMS para o pico de obras de final de ano.
+      </p>
+
+      <div class="inline-flex bg-white/90 backdrop-blur border border-emerald-300 rounded-2xl p-4 shadow-sm items-center gap-8 text-left">
+        <div>
+          <p class="text-[10px] font-bold uppercase text-slate-400 tracking-wider">TECX CONSULTORIA</p>
+          <p class="text-sm font-extrabold text-slate-900">Jonatas Alcântara</p>
+        </div>
+        <div class="h-8 w-px bg-slate-200"></div>
+        <div>
+          <p class="text-[10px] font-bold uppercase text-slate-400 tracking-wider">WHATSAPP / TELEFONE</p>
+          <p class="text-sm font-bold text-[#00875A]">(11) 98460-2431</p>
+        </div>
+        <div class="h-8 w-px bg-slate-200"></div>
+        <div>
+          <p class="text-[10px] font-bold uppercase text-slate-400 tracking-wider">CANAL OFICIAL</p>
+          <p class="text-sm font-bold text-slate-700">jonatastecx@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-between items-center border-t border-emerald-300/50 pt-3">
+      <span class="text-xs font-bold text-[#006644]">JMS Lajes e Muros Pré-moldados • Atibaia/SP</span>
+      <span class="text-xs font-semibold text-[#006644]">tecxconsultoria.com.br</span>
+    </div>
+  </div>
+
+  <!-- SCRIPT PARA RENDERIZAR GRÁFICO (Chart.js) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const ctx = document.getElementById('chartDias').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+          datasets: [{
+            label: 'Impressões',
+            data: [121, 137, 120, 83, 84, 60, 6],
+            backgroundColor: [
+              '#00875A',
+              '#00875A',
+              '#00875A',
+              '#10b981',
+              '#10b981',
+              '#cbd5e1',
+              '#f1f5f9'
+            ],
+            borderRadius: 6,
+            borderSkipped: false
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return ' ' + context.raw + ' impressões (' + ((context.raw / 611)*100).toFixed(1) + '%)';
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: { color: '#F1F5F9' },
+              ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } }
+            },
+            x: {
+              grid: { display: false },
+              ticks: { font: { family: 'Plus Jakarta Sans', size: 10, weight: '600' } }
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
