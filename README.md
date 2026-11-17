@@ -13,6 +13,7 @@ Dossiê interativo de auditoria do **Chatbot de WhatsApp**, conferência de pedi
    - **7 vendas formalmente fechadas** confirmadas no mês auditado.
    - Diagnóstico técnico de comportamento da IA, gargalos de handoff humano e tempo de resposta.
    - Download direto da base auditada completa em CSV (`/CRM/auditoria_pedidos_outubro_detalhada.csv`).
+   - **Seção "Status do Projeto"**: Check-in executivo com todas as entregas concluídas, correções aplicadas e roadmap operacional.
 
 2. **Apresentação Executiva Google Ads (Outubro/2026) (`/apresentacao_google_outubro`)**
    - Performance de campanhas de pesquisa e captação de leads.
@@ -21,6 +22,16 @@ Dossiê interativo de auditoria do **Chatbot de WhatsApp**, conferência de pedi
 
 3. **Apresentação de Marketing (Setembro/2026) (`/apresentacao_marketing_setembro`)**
    - Histórico consolidado do mês anterior para comparação evolutiva.
+
+---
+
+## 📌 Status do Projeto & Check-in de Entregas
+
+- ✅ **Auditoria Concluída:** Base de Outubro 100% auditada e conferida contra o CRM.
+- ✅ **Recepcionista Unificada em Produção:** Novo agente de IA ("José") com tom consultivo humanizado no WhatsApp.
+- ✅ **Política Anti-Preço & Ticket 100%:** Chatbot blindado contra orçamentos automáticos; criação obrigatória de tickets para 100% dos produtos do catálogo.
+- ✅ **Infraestrutura UAZAPI & Áudio Ativa:** Transcrição de mensagens de voz via Whisper e tratamento completo de identificadores da Meta (PN e LID).
+- 🔄 **Próximos Passos:** Régua de follow-up automático (24h/72h) e parametrização avançada de UTMs nos anúncios.
 
 ---
 
